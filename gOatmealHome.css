@@ -1,6 +1,6 @@
-@import "node_modules/nord/src/nord.scss";
+@import "node_modules/nord/src/nord.css";
 
 body {
-  background-color: $nord0;
-  color: $nord8;
+  background-color: var(--nord0);
+  color: var(--nord8);
 }
