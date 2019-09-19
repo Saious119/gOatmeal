@@ -1,0 +1,6 @@
+@import "node_modules/nord/src/nord.scss";
+
+body {
+  background-color: $nord0;
+  color: $nord8;
+}
