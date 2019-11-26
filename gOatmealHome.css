@@ -6,6 +6,71 @@
   flex-direction: column;
 }
 
+img {
+  max-width: 100%;
+  max-height: 100%;
+  border: 0;
+}
+
+.topnav {
+  display: flex;
+  overflow: hidden;
+  background-color: #fff;
+  flex-direction: row;
+}
+
+.cartlogo {
+  margin-left: auto;
+  float: right;
+  padding: 10px;
+  max-width: 10%;
+}
+
+.subheader {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: #fff;
+  margin-bottom: 30px;
+}
+
+.subheader input[type=text] {
+  margin-right: 5%;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding-right: 10%;
+}
+
+.recipe {
+  display: flex;
+  flex-direction: column;
+  background: rgba(0, 0, 0, 0.06);
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.recipe-image {
+
+}
+
+.recipe-top {
+  display: flex;
+}
+
+.top-right {
+  display: flex;
+  flex-direction: row;
+}
+
+.recipe-bottom {
+
+}
+
+.topnav > .cartlogo {
+  flex: 1 0 0%;
+  align-self: flex-end;
+}
+
 .wrapper > * {
   padding: 10px;
   flex: 1 100%;
@@ -82,6 +147,8 @@ body {
   padding: 10px;
   align-self: center;
 }
+
+/*
 .topnav {
   display: flex;
   overflow: hidden;
@@ -101,7 +168,7 @@ body {
   align-items: center;
   color: black;
 }
-
+*/
 /* When the screen is less than 600px wide, stack the links and the search field vertically instead of horizontally */
 @media screen and (max-width: 600px) {
   .topnav a, .topnav input[type=text] {
