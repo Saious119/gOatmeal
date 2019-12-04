@@ -1,7 +1,7 @@
 var MongoClient = require('mongodb').MongoClient;
 
 //Change url to access different database
-var url = "mongodb://localhost:27017/newDB";
+var url = "mongodb://localhost:27017/";
 var readline = require('readline');
 var rl = readline.createInterface({
   input: process.stdin,
