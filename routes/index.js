@@ -27,10 +27,14 @@ router.get('/get-data', function(req,res,next){
 
 router.get('/insert', function(req,res,next){
     var item ={
-        title:req.body.title,
-        content: req.body.content,
-        author: req.body.author
+        name:req.body.name,
+        id: req.body.id,
+        ingedients: req.body.ingedients,
+        cookingSteps: req.body.cookingSteps,
+        tags: req.body.tags,
+        description: req.body.description,
     };
+    var id = req.body.id;
     mongo.connect(url, function(err, db){
         assert.equal(null,err);
         db.collection('user-data').insertOne(item,function(err, result){
@@ -42,11 +46,36 @@ router.get('/insert', function(req,res,next){
 });
 
 router.post('/update', function(req,res,next){
-
+    var item ={
+        name:req.body.name,
+        id: req.body.id,
+        ingedients: req.body.ingedients,
+        cookingSteps: req.body.cookingSteps,
+        tags: req.body.tags,
+        description: req.body.description,
+    };
+    var id = req.body.id;
+    mongo.connect(url,function(err,db){
+        assert.equal(err,null);
+        db.collection('user-data').updateOne({"_id": objectId(id)},{$set: item}, function(err, result){
+            assert.equal(null, err);
+            console.log('Reciepe Updated');
+            db.close();
+        });
+    });
 });
 
 router.get('/delete', function(req,res,next){
+    var id = req.body.id;
 
+    mongo.connect(url, function(err, db) {
+        assert.equal(null, err);
+        db.collection('user-data').deleteOne({"_id": objectId(id)}, function(err, result) {
+            assert.equal(null, err);
+            console.log('Item deleted');
+        db.close();
+    });
+  });
 });
 
 module.exports =router;
