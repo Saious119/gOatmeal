@@ -1,3 +1,7 @@
+.* {
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
 .wrapper {
   display: flex;  
   flex-flow: row wrap;
@@ -26,46 +30,95 @@ img {
   max-width: 10%;
 }
 
+.add-button {
+	flex: 2;
+	padding-top: 50px;
+}
+
 .subheader {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	height: 200px;
+	align-items: center;
+}
+
+.search {
+	height: 200px;
+	font-size: 14pt;
+	flex: 1;
+}
+
+.recipe-1 {
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  background-color: #fff;
-  margin-bottom: 30px;
-}
-
-.subheader input[type=text] {
-  margin-right: 5%;
-  margin-top: 15px;
-  margin-bottom: 15px;
-  padding-right: 10%;
-}
-
-.recipe {
-  display: flex;
-  flex-direction: column;
-  background: rgba(0, 0, 0, 0.06);
   margin-left: 10%;
   margin-right: 10%;
+  height: 500px;
+  padding-top: 5%;
+}
+
+.recipe-2 {
+  display: flex;
+  flex-direction: row;
+  padding-top: 10%;
+  margin-left: 10%;
+  margin-right: 10%;
+  height: 500px;
 }
 
 .recipe-image {
-
 }
 
-.recipe-top {
+.recipe-left {
   display: flex;
+  background: yellow;
+  flex: 1 1 0px;
+  flex-direction: column;
+  overflow: hidden;
 }
 
-.top-right {
+.recipe-right {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  flex: 1 1 0px;
+  background: rgb(230, 230, 230);
+  font-family: 'Roboto Condensed', sans-serif;
 }
 
-.recipe-bottom {
-
+.recipe-name {
+	text-align: center;
+	font-size: 300%;
+	flex: 1;
+	padding-top: 5%;
 }
 
+.recipe-description {
+	flex: 3;
+	padding-left: 20%;
+	padding-right: 20%;
+	text-align: center;
+}
+
+.recipe-tools {
+	display: flex;
+	flex-direction: row;
+	flex: 1;
+	justify-content: center;
+}
+
+.cook-recipe {
+}
+
+.edit-recipe {
+	padding-left: 5%;
+	padding-right: 5%;
+}
+
+.delete-recipe {
+}
+
+/*
 .topnav > .cartlogo {
   flex: 1 0 0%;
   align-self: flex-end;
@@ -134,7 +187,7 @@ img {
   .aside-1 { order: 1; } 
   .main    { order: 2; }
   .aside-2 { order: 3; }
-  /*.aside-3 { order: 4; }*/
+  /*.aside-3 { order: 4; }
   .footer  { order: 5; }
 }
 
@@ -168,8 +221,8 @@ body {
   align-items: center;
   color: black;
 }
-*/
-/* When the screen is less than 600px wide, stack the links and the search field vertically instead of horizontally */
+
+/* When the screen is less than 600px wide, stack the links and the search field vertically instead of horizontally 
 @media screen and (max-width: 600px) {
   .topnav a, .topnav input[type=text] {
     float: none;
