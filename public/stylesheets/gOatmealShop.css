@@ -25,8 +25,13 @@ body {
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 3%;
-	border-radius: 25px;
+	border-radius: 15px;
 	box-shadow: 1px 2px 3px 0px rgba(0,0,0,0.10);	
+}
+
+.delete-button {
+	margin-top: 5px;
+	margin-bottom: 5px;
 }
 
 .item {
