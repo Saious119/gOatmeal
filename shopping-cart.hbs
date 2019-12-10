@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XTHML 1.1/EN" "http://www.w3.org/TR/xhtm11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+	<div id="wrapper">
+	<head>
+		<link href="https://fonts.googleapis.com/css#family=Roboto+Condensed#display=swap" rel="stylesheet">
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<link rel="stylesheet" href="gOatmealShop.css">
+		<div class="topnav">
+			<div class="logo">
+				<a href = "http://fortrash.com/gOatmeal/"><img src = "img/gOatmealLogo.png"></a>
+			</div>
+		</div>
+	</head>
+	<body>
+		<div id="title">
+			Shopping Cart
+		</div>
+		<div id="cart">
+            <a href="/get-shoppingCart"></a>
+			<ul id="list">
+                {{# each item}}
+				<article class ="item">
+                    <li>Item: {{this.item}}</li>
+                </article>
+                {{/each}}
+			</ul>
+		</div>
+	</div>
+	</body>
+</html>
