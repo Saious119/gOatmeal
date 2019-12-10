@@ -1,0 +1,74 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Roboto';
+}
+.wrapper {
+	display: flex;
+	flex-direction: column;
+}
+
+#title {
+	text-align: center;
+	font-size: 60px;
+	font-weight: 200;
+}
+
+#cart {
+	display: flex;
+	flex-direction: column;
+	background: rgb(230, 230, 230);
+	min-height: 400px;
+	width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 3%;
+	border-radius: 25px;
+	box-shadow: 1px 2px 3px 0px rgba(0,0,0,0.10);	
+}
+
+.item {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: no-wrap;
+	height: 50px;
+}
+
+.buttons {
+	position: relative;
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+
+.delete-button {
+	margin: 10px;
+}
+
+.add {
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 20px;
+}
+
+#list {
+	padding-top: 10%;
+	font-size: large;
+	padding-left: 30%;
+}
+
+.ingredient{
+	margin: 10px;
+	flex: 1;
+}
+
+.quantity {
+	margin: 10px;
+	flex: 1;
+}
+
+.unit {
+	margin: 10px;
+	flex: 1;
+}
