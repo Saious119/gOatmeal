@@ -68,6 +68,7 @@ img {
 }
 
 .recipe-image {
+  
 }
 
 .recipe-left {
@@ -91,6 +92,12 @@ img {
 	font-size: 300%;
 	flex: 1;
 	padding-top: 5%;
+}
+
+.recipe-tags {
+	text-align: center;
+	font-size: 100%;
+	flex: 1;
 }
 
 .recipe-description {
