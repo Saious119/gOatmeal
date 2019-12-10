@@ -1,0 +1,330 @@
+.* {
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.wrapper {
+  display: flex;  
+  flex-flow: row wrap;
+  font-weight: bold;
+  text-align: center;
+  flex-direction: column;
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+  border: 0;
+}
+
+.topnav {
+  display: flex;
+  overflow: hidden;
+  background-color: #fff;
+  flex-direction: row;
+}
+
+.cartlogo {
+  margin-left: auto;
+  float: right;
+  padding: 10px;
+  max-width: 10%;
+}
+
+.add-button {
+	flex: 2;
+	padding-top: 50px;
+}
+
+.subheader {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	height: 200px;
+	align-items: center;
+}
+
+.search {
+	height: 200px;
+	font-size: 14pt;
+	flex: 1;
+}
+
+
+
+.edit {
+	display: flex;
+	flex-direction: row;
+	margin-left: 0%;
+	margin-right: 0%;
+    height: 800px;
+	justify-content: space-between;
+}
+
+
+
+.edit-left {
+  display: flex;
+  flex-direction: column;  
+  flex: 1 1 0px;
+  margin-left: 2%;
+  margin-right: 10%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+
+.recipe-image {
+}
+
+.recipe-top-pic {
+  display: flex;
+  background: yellow;
+  flex: 50 1 0px;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.recipe-divide {
+	display: flex;
+	background: white;
+	flex: 5 1 0px;
+	flex-direction: column;
+}
+
+.recipe-center-descrip {
+  display: flex;
+  flex-direction: column;
+  flex: 20 1 0px;
+  background: rgb(230, 230, 230);
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.recipe-center-tags {
+  display: flex;
+  flex-direction: column;
+  flex: 20 1 0px;
+  background: rgb(230, 230, 230);
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+
+
+.edit-right {
+  display: flex;
+  flex-direction: column;
+  flex: 2 1 0px;
+  padding-top: 2%;
+}
+
+.recipe-tools {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.recipe-ing-list {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	padding-top: 10%;
+}
+
+.recipe-ing {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	padding-top: 2%;
+	padding-bottom: 2%;
+	background: rgb( 230,230,230);
+}
+
+.add-ing {
+	display: flex;
+	justify-content: right;
+	padding-right: 2%;
+	padding-top: 2%;
+	padding-bottom: 2%;
+	height: 50px;
+}
+
+.cook-step {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+}
+
+.recipe-steps {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	padding-top: 2%;
+	padding-bottom: 2%;
+	background: rgb( 230,230,230);
+}
+
+.add-step {
+	display: flex;
+	justify-content: right;
+	padding-right: 2%;
+	padding-top: 2%;
+	padding-bottom: 2%;
+	height: 50px;
+}
+
+
+
+.recipe-title {
+	text-align: center;
+	font-size: 200%;
+	padding-top: 1%;
+}
+
+.recipe-description {
+	flex: 3;
+	padding-left: 20%;
+	padding-right: 20%;
+	text-align: center;
+}
+
+.recipe-description-tags {
+	flex: 3;
+	padding-left: 20%;
+	padding-right: 20%;
+	padding-top: 5%;
+	text-align: center;
+}
+
+
+.cook-shop {
+	padding-left: 5%;
+	padding-right: 5%;
+}
+
+.cook-recipe {
+	padding-left: 5%;
+}
+
+.edit-recipe {
+}
+
+.delete-recipe {
+	padding-right: 5%;
+}
+
+/*
+.topnav > .cartlogo {
+  flex: 1 0 0%;
+  align-self: flex-end;
+}
+
+.wrapper > * {
+  padding: 10px;
+  flex: 1 100%;
+}
+.details{
+  display: flex;
+  flex-flow: row wrap;
+  text-align: center;
+  flex-direction: row;
+}
+.details > *{
+  padding: 5px;
+  flex: 1 100%;
+}
+.endPost{
+  display: flex;
+  flex-flow: row wrap;
+  text-align: center;
+  flex-direction: row;
+}
+.endPost > *{
+  padding: 5px;
+  flex: 1 100%;
+}
+.header {
+  background: rgba(0, 0, 0, 0.06);
+}
+
+.aside-3 {
+  background: rgba(0, 0, 0, 0.06);
+  align-self: center;
+  text-align: left;
+}
+.aside-4{
+  background: rgba(0, 0, 0, 0.06);
+  align-self: center;
+}
+.main {
+  background: rgba(0, 0, 0, 0.06);
+  flex-grow: 2;
+  align-self: center;
+}
+
+.aside-1 {
+  text-align: left;
+  align-self: center;
+  background: rgba(0, 0, 0, 0.06);
+}
+
+.aside-2 {
+  background: rgba(0, 0, 0, 0.06);
+  align-self: center;
+}
+
+@media all and (min-width: 600px) {
+  .aside { flex: 1 0 0; }
+}
+
+@media all and (min-width: 800px) {
+  .main    { flex: 3 0px; }
+  .aside-1 { order: 1; } 
+  .main    { order: 2; }
+  .aside-2 { order: 3; }
+  /*.aside-3 { order: 4; }
+  .footer  { order: 5; }
+}
+
+body {
+  padding: 2em; 
+}
+
+.logo{
+  align-items: left;
+  padding: 10px;
+  align-self: center;
+}
+
+/*
+.topnav {
+  display: flex;
+  overflow: hidden;
+  background-color: #ffffff;
+  flex-direction: row;
+  margin-bottom: 50px;
+}
+.topnav input[type=text] {
+  float: right;
+  padding: 6px;
+  border: none;
+  margin-top: 8px;
+  margin-right: 30px;
+  margin-left: 32%;
+  font-size: 17px;
+  align-self: center;
+  align-items: center;
+  color: black;
+}
+
+/* When the screen is less than 600px wide, stack the links and the search field vertically instead of horizontally 
+@media screen and (max-width: 600px) {
+  .topnav a, .topnav input[type=text] {
+    float: none;
+    display: block;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    padding: 14px;
+  }
+  .topnav input[type=text] {
+    border: 1px solid #ffffff;
+  }
+}
