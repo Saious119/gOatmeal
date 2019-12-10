@@ -27,7 +27,12 @@
 				<input type="text" class="unit" placeholder="Units"></input>
 			</div>
 			<div class="add">
-				<img src="img/add.png" alt="Add Ingredient">
+                <form action="/insert" method="post">
+                    <div class="input">
+                        <img src="img/add.png" alt="Add Ingredient">
+                        <input type="text" name="names">
+                    </div>
+                </form>
 			</div>
 		</div>
 	</div>
