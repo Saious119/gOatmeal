@@ -6,11 +6,17 @@ const path = require('path');
 const mongoose = require('mongoose');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
-const cors = require('cors')
+const cors = require('cors');
+
+var favicon = require('serve-favicon');;
+var bodyParser = require('body-parser');
+var hbs = require('hbs');
+
+var routes = require('./routes/index');
 
 const config = require('./config/Config');
 
-const routes = require('./routes/Routes');
+//const routes = require('./routes/Routes');
 
 const app = express();
 
