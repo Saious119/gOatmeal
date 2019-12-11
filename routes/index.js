@@ -25,8 +25,12 @@ var userDataSchema = new Schema({
     description:String
 }, {collection: 'recipe'});
 
+var ingredientsListSchema = new Schema({
+    ingedients:[String]
+}, {collection: 'db'});
+
 var UserData = mongoose.model('UserData', userDataSchema);
-var ingedientsList = mongoose.model('ingrediantsList', ingrediantsListSchema);
+var ingedientsList = mongoose.model('ingredientsList', ingredientsListSchema);
 
 /*Get home page.*/
 router.get('/',function(req,res,next){
