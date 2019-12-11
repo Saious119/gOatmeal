@@ -30,7 +30,7 @@ var ingedientsList = mongoose.model('ingrediantsList', ingrediantsListSchema);
 
 /*Get home page.*/
 router.get('/',function(req,res,next){
-    res.render('index');
+    //res.render('index');
 });
 
 router.get('/get-data', function(req, res, next) {
