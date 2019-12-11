@@ -1,57 +1,23 @@
 //app.js
-
-const createError = require('http-errors');
 const express = require('express');
-const path = require('path');
-const mongoose = require('mongoose');
-const cookieParser = require('cookie-parser');
-const logger = require('morgan');
-const cors = require('cors');
-
-var favicon = require('serve-favicon');;
-var bodyParser = require('body-parser');
-var hbs = require('hbs');
-
-var routes = require('./routes/index');
-
-const config = require('./config/Config');
-
-//const routes = require('./routes/Routes');
-
+const bodyParser = require('body-parser');
+const gOatmeal = require('./routes/gOatmeal.route'); // Imports routes for the products
 const app = express();
+// Set up mongoose connection
+const mongoose = require('mongoose');
+let dev_db_url = 'mongodb+srv://andy:boneking@goatmeal-kl33q.mongodb.net/test';
+let mongoDB = process.env.MONGODB_URI || dev_db_url;
+mongoose.connect(mongoDB, {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.Promise = global.Promise;
+let db = mongoose.connection;
+db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
-mongoose.connect(config.DB, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: false}));
+
+app.use('/gOatmeal', gOatmeal);
+let port = 1234;
+
+app.listen(port, () => {
+    console.log('Server is up and running on port numner ' + port);
 });
-
-app.use(cors());  //enable cors
-
-app.use(logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
-
-app.use('/', routes);
-
-// catch 404 and forward to error handler
-app.use((req, res, next) => {
-  next(createError(404));
-});
-
-// error handler
-app.use((err, req, res) => {
-  // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
-
-  // render the error page
-  res.status(err.status || 500);
-  res.render('error');
-});
-
-app.listen(3000, "localhost", function(){console.log("server running")}); // Listen on port defined in environment
-
-
-module.exports = app;

@@ -9,7 +9,7 @@ var mongoose = require('mongoose');
 
 var url ='mongodb+srv://andy:boneking@goatmeal-kl33q.mongodb.net/test?retryWrites=true&w=majority'
 
-mongoose.connect(url);
+mongoose.connect(url, {useNewUrlParser: true, useUnifiedTopology: true});
 var Schema = mongoose.Schema;
 
 var userDataSchema = new Schema({
