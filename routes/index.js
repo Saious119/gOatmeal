@@ -6,7 +6,7 @@ var assert = require('assert');
 const app = require('express') ()
 const path = require('path')
 
-var url ='fortrash.com:27017'
+var url ='mongodb+srv://andy:boneking@goatmeal-kl33q.mongodb.net/test?retryWrites=true&w=majority'
 
 /*Get home page.*/
 router.get('/',function(req,res,next){
