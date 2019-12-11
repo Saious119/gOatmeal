@@ -12,7 +12,7 @@ var url ='mongodb+srv://andy:boneking@goatmeal-kl33q.mongodb.net/test?retryWrite
 mongoose.connect(url);
 var Schema = mongoose.Schema;
 
-var recipe = new SVGSwitchElement({
+var userDataSchema = new Schema({
     id: Int32,
     name:String,
     IngredientName:[String],
