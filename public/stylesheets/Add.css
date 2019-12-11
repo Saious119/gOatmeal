@@ -131,14 +131,10 @@ img {
 .recipe-ing {
 	display: flex;
 	flex-direction: row;
-	justify-content: space-around;
+	justify-content: space-evenly;
 	padding-top: 2%;
 	padding-bottom: 2%;
 	background: rgb( 230,230,230);
-}
-
-.delete-ing{
-	display: flex;
 }
 
 .add-ing {
