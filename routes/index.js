@@ -13,13 +13,13 @@ mongoose.connect(url);
 var Schema = mongoose.Schema;
 
 var userDataSchema = new Schema({
-    id: Int32,
+    id: Number,
     name:String,
     IngredientName:[String],
-    Amount:Int32Array,
-    Calories:Int32Array,
+    Amount:[Number],
+    Calories:[Number],
     cookingSteps:[String],
-    time:Int32Array,
+    time:[Number],
     image_url:String,
     tags:[String],
     description:String
@@ -56,7 +56,7 @@ router.get('/insert', function(req,res,next){
     var data = new UserData(item);
     data.save();
     res.redirect('/');
-    });
+
 });
 
 router.post('/update', function(req,res,next){
