@@ -1,0 +1,98 @@
+<!--
+<html>
+<head>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"> </script>
+
+<script>
+
+    $(function() {
+
+
+   var people = [];
+
+   $.getJSON('recipes.json', function(data) {
+       $.each(data.recipeList, function(i, f) {
+          var tblRow = "<tr>" + "<td>" + f.recipeTitle + "</td>" +
+           "<td>" + f.ingrediants + "</td>" + "<td>" + f.id + "</td>" + "<td>" + f.steps + "</td>" + "<td>" + f.tags + "</td>" + "<td>" + f.picture + "</td>" + "</tr>"
+           $(tblRow).appendTo("#userdata tbody");
+     });
+
+   });
+
+});
+</script>
+</head>
+
+<body>
+
+<div class="wrapper">
+<div class="profile">
+   <table id= "userdata" border="2">
+        <thead>
+            <th>Recipe Name</th>
+            <th>Ingredients</th>
+            <th>ID</th>
+            <th>Steps</th>
+            <th>Tags</th>
+            <th>PicUrl</th>
+        </thead>
+      <tbody>
+
+       </tbody>
+   </table>
+
+</div>
+</div>
+
+</body>
+</html>
+*/
+
+-->
+
+<html>
+<head>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"> </script>
+
+<script>
+
+    $(function() {
+
+
+   var people = [];
+
+   $.getJSON('recipes.json', function(data) {
+       $.each(data.recipeList, function(i, f) {
+          var tblRow = "<tr>" + "<td>" + f.recipeTitle + "</td>" +
+           "<td>" + f.id + "</td>" + "<td>" + f.ingredients + "</td>"  + "<td>" + f.steps + "</td>" + "<td>" + f.tags + "</td>" + "</tr>"
+           $(tblRow).appendTo("#userdata tbody");
+     });
+
+   });
+
+});
+</script>
+</head>
+
+<body>
+
+<div class="wrapper">
+<div class="profile">
+   <table id= "userdata" border="2">
+  <thead>
+            <th>Recipe Name</th>
+            <th>ID</th>
+            <th>Ingredients</th>
+            <th>Steps</th>
+            <th>Tags</th>
+        </thead>
+      <tbody>
+
+       </tbody>
+   </table>
+
+</div>
+</div>
+
+</body>
+</html>

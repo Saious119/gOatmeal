@@ -1,10 +1,38 @@
+
 <!DOCTYPE html>
 <html>
 <head>
-<link REL=StyleSheet HREF="C:\Users\Tyler\Desktop\School Work\CS350\recipeBuddyRepository\cookPage.css" TYPE="text/css" MEDIA=screen>
-    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"> </script>
+
+<LINK REL=StyleSheet HREF="/cookPage.css" TYPE="text/css" MEDIA=screen>
+<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 
 
+<script>
+
+$(function() {
+
+
+   var people = [];
+
+   $.getJSON('recipes.json', function(data) {
+       $.each(data.recipeList, function(i, f) {
+           var ingredients = f.ingredients;
+           var firstRecipe = "<div class = 'ingredient'>" + ingredients[0] + "</div>" ;
+           console.log(firstRecipe);
+           $(firstRecipe).appendTo( "#ingredientSection" );
+           //var tblRow = "<tr>" + "<td>" + f.recipeTitle + "</td>" +
+           //"<td>" + f.id + "</td>" + "<td>" + f.ingredients + "</td>"  + "<td>" + f.steps + "</td>" + "<td>" + f.tags + "</td>" + "</tr>"
+           //$(tblRow).appendTo("#userdata tbody");
+     });
+
+   });
+
+});
+</script>
+
+
+    
 </head>
 <body>
 
@@ -43,100 +71,11 @@
             <div style="margin-left: auto; margin-right: auto">
                 <h1> Ingredients</h1>
             </div>
-            <div class = "ingredient">
-                <div class = "ingredientName">
-                    
-                    <p id = "firstIngredient">
-                        <script type="text/javascript">
-                            document.write({firstIngredient});
-                        </script>
-                    </p>
-                    
-                </div>
-                
-                <div class = "servingSize">
-                    <p>1 Cup</p>
-                </div>
-                
-                <div class - "calAmount">
-                    <p>145146 Cal</p>
-                </div>
-                
+          
+            <div id = "ingredientSection">
+
             </div>
 
-            <div class = "ingredient">
-                <div class = "ingredientName">
-                    <p>Oatmeal</p>
-                </div>
-                
-                <div class = "servingSize">
-                    <p>1 Cup</p>
-                </div>
-                
-                <div class - "calAmount">
-                    <p>200 Cal</p>
-                </div>
-            </div>
-
-            <div class = "ingredient">
-                <div class = "ingredientName">
-                    <p>
-                    <script type="text/javascript">
-                        document.write(myIngredient1)
-                    </script>
-                    </p>
-                </div>
-                
-                <div class = "servingSize">
-                    <p>2 Cups</p>
-                </div>
-                
-                <div class - "calAmount">
-                    <p>0 Cal</p>
-                </div>
-            </div>
-            
-            <div class = "ingredient">
-                <div class = "ingredientName">
-                    <p>Water</p>
-                </div>
-                
-                <div class = "servingSize">
-                    <p>2 Cups</p>
-                </div>
-                
-                <div class - "calAmount">
-                    <p>0 Cal</p>
-                </div>
-            </div>
-            
-            <div class = "ingredient">
-                <div class = "ingredientName">
-                    <p>Water</p>
-                </div>
-                
-                <div class = "servingSize">
-                    <p>2 Cups</p>
-                </div>
-                
-                <div class - "calAmount">
-                    <p>0 Cal</p>
-                </div>
-            </div>
-            
-            <div class = "ingredient">
-                <div class = "ingredientName">
-                    <p>Water</p>
-                </div>
-                
-                <div class = "servingSize">
-                    <p>2 Cups</p>
-                </div>
-                
-                <div class - "calAmount">
-                    <p>0 Cal</p>
-                </div>
-            </div>
             
             
         </div>

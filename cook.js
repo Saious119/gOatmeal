@@ -14,48 +14,8 @@ const { JSDOM } = jsdom;
 
 var htmlFile
 
-fs.readFile('./cook.hbs', function(err, data){
-  if (!err) {
-    // make the buffer into a string
-    var source = data.toString();
-    // call the render function
-    htmlFile = renderToString(source, {name: "Recipe"});
-  } else {
-        console.log("Error");
-  }
-});
+var storedResult
 
-// this will be called after the file is read
-function renderToString(source, data) {
-  var template = hbs.compile(source);
-  var outputString = template(data);
-    console.log(outputString);
-    return outputString;
-}
-
-
-
-
-exports.html = htmlFile;
-
-// Retrieve the template data from the HTML (jQuery is used here).
-//var template = $('#handlebars-demo').html();
-
-// Compile the template data into a function
-//var templateScript = hbs.compile(template,{name: "Recipe"});
-
-var context = { "name" : "Ritesh Kumar", "occupation" : "developer" };
-
-// html = 'My name is Ritesh Kumar. I am a developer.'
-//var html = templateScript(context);
-
-// Insert the HTML code into the page
-//$(document.body).append(html);
-
-
-
-
-/*
 var MongoClient = require('mongodb').MongoClient;
 
 //Change url to access different database
@@ -78,6 +38,9 @@ MongoClient.connect(url, function(err, db) {
     
     dbo.collection("Recipe").find(query).toArray(function(err, result) {
         //Result is a array of all returned results
+        storedResult = result[0].IngredientName[0];
+        console.log("Stored Result: ");
+        console.log(storedResult);
         console.log(result);
         console.log("Recipe Name: ");
         console.log(result[0].name);
@@ -107,4 +70,50 @@ MongoClient.connect(url, function(err, db) {
 
 });
 
-*/
+
+
+
+fs.readFile('./cook.hbs', function(err, data){
+  if (!err) {
+    // make the buffer into a string
+    var source = data.toString();
+    // call the render function
+    console.log("Stored Result Later")
+    console.log(storedResult)
+    htmlFile = renderToString(source, {name: storedResult});
+      console.log(htmlFile)
+  } else {
+        console.log("Error");
+  }
+});
+
+// this will be called after the file is read
+function renderToString(source, data) {
+  var template = hbs.compile(source);
+  var outputString = template(data);
+    //console.log(outputString);
+    return outputString;
+}
+
+
+
+
+exports.html = htmlFile;
+
+// Retrieve the template data from the HTML (jQuery is used here).
+//var template = $('#handlebars-demo').html();
+
+// Compile the template data into a function
+//var templateScript = hbs.compile(template,{name: "Recipe"});
+
+//var context = { "name" : "Ritesh Kumar", "occupation" : "developer" };
+
+// html = 'My name is Ritesh Kumar. I am a developer.'
+//var html = templateScript(context);
+
+// Insert the HTML code into the page
+//$(document.body).append(html);
+
+
+
+
