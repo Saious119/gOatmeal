@@ -73,11 +73,13 @@ img {
 }
 
 .recipe-image {
+	padding-top: 30%;
+	padding-left: 40%;
 }
 
 .recipe-top-pic {
   display: flex;
-  background: yellow;
+  background: rgb(245,250,255);
   flex: 50 1 0px;
   flex-direction: column;
   overflow: hidden;
@@ -114,6 +116,12 @@ img {
   flex: 2 1 0px;
   padding-top: 2%;
 }
+
+.recipe-name {
+	display: flex;
+	justify-content: center;
+	padding-top: 5%;
+}	
 
 .recipe-tools {
 	display: flex;
