@@ -1,0 +1,14 @@
+{
+   "shoppingList": [
+	{
+		"ingredient": "Apples",
+		"quantity": 5,
+		"units": "Tubs"
+    },
+    {
+		"ingredient": "Potato",
+		"quantity": 3,
+		"units": "Tubs"
+    }
+]}
+
