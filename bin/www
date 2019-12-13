@@ -3,8 +3,9 @@
 /**
  * Module dependencies.
  */
-
-var app = require('../app');
+var express = require('express');
+var app     = express();
+//var app = require('../app');
 var debug = require('debug')('goatmeal:server');
 var http = require('http');
 
