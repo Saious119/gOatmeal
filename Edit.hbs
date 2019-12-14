@@ -1,0 +1,140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+    <head>
+<!--        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"> </script>
+        <link href="https://fonts.goggleapis.com/css#family=Roboto+Condensed#display=swap" rel="stylesheet">	
+-->        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link rel="stylesheet" href="public/stylesheets/Edit.css">
+        
+<!--        <script>
+    
+var counter = 0;
+
+
+    $(function() {
+
+//        $( "div" ).remove( '.step' );
+//        $( "div" ).remove( '.ingredient' );
+        counter = counter+1;
+        if(counter > 2)
+        {
+            counter = 0
+        }
+       $.getJSON('recipes.json', function(data) {
+           $.each(data.recipeList, function(i, f) {
+               if(i == 0){
+                   var newingredients = f.ingredients;
+                   var newservingSizes = f.servingSizes;
+                   for (i = 0; i < newingredients.length; i++) {
+                       var ingredientDiv = "<br><div class='delete-ing'><input type='button' style='background-color:red;color:black;' value='Delete'></input></div><input type='text' size='35' placeholder=" + newingredients[i] + "></input> " + "<input type='text' size='35' placeholder=" + newservingSizes[i] + "></input>" + "<br>";
+                       console.log(ingredientDiv);
+                       $(ingredientDiv).appendTo( "#ingredients" );
+                    }
+                }    
+           });
+
+       });
+
+    });
+
+</script> -->
+    </head>
+	<body>
+		<div class="edit">
+			<div class="edit-left">
+				<div class="recipe-top-pic">
+					<div class="recipe-image">
+	<!--					<img src="img/chicken.jpg">-->
+					</div>
+				</div>
+				<div class="recipe-divide">
+				</div>
+				<div class="recipe-center-descrip">
+					<div class="recipe-title">
+						Total Cook Time:
+					</div>
+					<div class="recipe-description">
+						<p id="time"></p>
+						<script>
+							var time = 135;
+							document.getElementById("time").innerHTML = time + " minutes";
+						</script> 
+					</div>
+				</div>
+				<div class="recipe-divide">
+				</div>
+				<div class="recipe-center-tags">
+					<div class="recipe-description-tags">
+						#tag (test)
+					</div>
+				</div>
+				<a class="upload-pic" title="upload picture" href="http://fortrash.com/gOatmeal/"><img src="img/pic.png"></a>					
+			</div>
+
+		<div class="edit-right">
+			<div class="recipe-tools">
+				<a class = "cook-shop" title="shopping cart" href = "http://fortrash.com/gOatmeal/"><img src = "img/shopping-cart2.png"></a>
+				<div class ="logo">
+					<a href = "http://fortrash.com/gOatmeal/"><img src ="img/gOatmealLogo.png"></a>
+				</div>
+				<a class = "cook-recipe" title="cook" href = "http://fortrash.com/gOatmeal/"><img src = "img/cook.png"></a>
+				<a class = "edit-recipe" title="edit" href = "http://fortrash.com/gOatmeal/"><img src = "img/edit.png"></a>
+				<a class = "delete-recipe" title="delete" href = "http://fortrash.com/gOatmeal/"><img src = "img/trash.png"></a>
+			</div>
+			<div class="recipe-name">
+				<input type="text" size="35" placeholder="Recipe Name"></input>
+			</div>
+			<div class="recipe-ing-list">
+				<div class="recipe-title">
+					Ingredients
+				</div>
+                <div class="recipe-ing">
+                    <div class="list-ing">
+                        <div>
+                            {{# each ing}}
+                                <div class="ingredient">
+                                    <div class = 'ingredientName'><p> {{ this.[0] }} </p></div>
+                                    <div class = 'servingSize'><p>{{ this.[1] }} </p></div>
+                                </div>  
+                            {{/each}}
+                        </div>
+                    </div>
+                </div>
+				<div class="recipe-ing">
+					<div class="delete-ing">
+						<input type="button" style="background-color:red;color:black;" value="Delete">
+						</input>
+					</div>
+					<input type="text" size="35" placeholder="Ingredient"></input>
+					<input type="text" size="35" placeholder="Quantity"></input>
+					<input type="text" size="35" placeholder="Units"></input>
+				</div>
+				<div class="add-ing">
+					<input type="button" style="background-color:green;color:black;" value="Add Ingredient">
+					</input>
+				</div>
+			</div>
+			<div class="cook-step">
+				<div class="recipe-title">
+					Cooking Steps
+				</div>
+				<div class="recipe-steps">
+					<div class="delete-ing">
+						<input type="button" style="background-color:red;color:black;" value="Delete">
+					</input>
+					</div>
+					<input type="text" size="100" placeholder="Description"></input>
+					<input type="text" placeholder="Time"></input>
+				</div>
+				<div class="add-step">
+					<input type="button" style="background-color:green;color:black;" value="Add New Step">
+					</input>
+				</div>
+			</div>
+		</div>
+	</div>
+    </body>
+      
+</html>
+
