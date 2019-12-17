@@ -10,19 +10,59 @@
               <a href = "http://fortrash.com/gOatmeal/"><img src ="img/gOatmealLogo.png"></a>
             </div>
 	    <div class="cartlogo">
-              <a href = "http://fortrash.com/gOatmeal/shopping-cart/"><img src ="img/shopping-cart.png"></a>
+              <a href = "shoppingcart"><img src ="img/shopping-cart.png"></a>
 	    </div>
         </div>
 	<div class="subheader">
         <div class="search">
           <input type="text" size="40" placeholder="Search..">
     	</div>
-	<a class = "add-button" href = "http://fortrash.com/gOatmeal/"><img src = "../img/add.png"></a>
+	<a class = "add-button" href = "Add"><img src = "img/add.png"></a>
 	</div>
     </head>
 	<body>
-        {{#each item}}
-            <li>{{this}}</li>
+        {{# each recipes}}
+            <div class="recipe">
+                <div class="recipe-left">
+                <div class="recipe-image">
+                    <img src="{{this.imgURL}}">
+                </div>
+                <div class="recipe-tags">
+                    <p>{{this.tags}}</p>
+                </div>
+                </div>
+                <div class="recipe-right">
+                <div class="recipe-name">
+                    <p>{{this.recipeName}}</p>
+                </div>
+                <div class="recipe-description">
+                    <p>{{this.description}}</p>
+                </div>
+                <div class="recipe-tools">
+                    <a class = "cook-recipe" href = "cook/{{this._id}}"><img src = "img/cook.png" width = 75px height = 75px></a>
+                    <a class = "edit-recipe" href = "cook"><img src = "img/edit.png" width = 75px height = 75px></a>
+                    <form action="/delete" method="post">
+                        <a class = "delete-recipe" href = "delete/{{this._id}}"><img src = "img/trash.png" width = 75px height = 75px></a>
+                    </form>
+                </div>
+                </div>
+            </div>
         {{/each}}
     </body>
+        <!--
+        <div class="recipe">
+            <header class="header">Name of recipe</header>
+            <div class="details">
+              <article class="main">
+                <p>Description</p>  
+              </article>
+              <aside class="aside aside-1">Photo</aside>
+              <aside class="aside aside-2">Cal Count and time</aside>
+            </div>
+            <div class="endPost">
+              <aside class="aside aside-3">tags</aside>
+              <aside class="aside aside-4">buttons here<button type="submit"><i class="fa fa-search"></i></button></aside>
+            </div>
+          </div>
+          //-->
 </html>

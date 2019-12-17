@@ -49,34 +49,34 @@ img {
 	flex: 1;
 }
 
-.recipe-1 {
-  display: flex;
-  flex-direction: row;
-  margin-left: 10%;
-  margin-right: 10%;
-  height: 500px;
-  padding-top: 5%;
-}
-
-.recipe-2 {
+.recipe {
   display: flex;
   flex-direction: row;
   padding-top: 10%;
   margin-left: 10%;
   margin-right: 10%;
   height: 500px;
+
 }
 
 .recipe-image {
-  
+    display: flex;
+    align-items: center;
+	justify-content: center;
+    border-style: solid;
+    border-color: black;
+    height: 300px;
+    width: 659px;
 }
 
 .recipe-left {
   display: flex;
-  background: yellow;
+  background: rgb(230, 230, 230);
   flex: 1 1 0px;
   flex-direction: column;
   overflow: hidden;
+    border-style: solid;
+    border-color: black;
 }
 
 .recipe-right {
@@ -85,6 +85,8 @@ img {
   flex: 1 1 0px;
   background: rgb(230, 230, 230);
   font-family: 'Roboto Condensed', sans-serif;
+    border-style: solid;
+    border-color: black;
 }
 
 .recipe-name {
@@ -95,9 +97,14 @@ img {
 }
 
 .recipe-tags {
+    display: flex;
 	text-align: center;
-	font-size: 100%;
+	font-size: 200%;
+    align-items: center;
+	justify-content: center;
 	flex: 1;
+    border-style: solid;
+    border-color: black;
 }
 
 .recipe-description {
@@ -105,6 +112,7 @@ img {
 	padding-left: 20%;
 	padding-right: 20%;
 	text-align: center;
+
 }
 
 .recipe-tools {
@@ -115,14 +123,18 @@ img {
 }
 
 .cook-recipe {
+    margin-left: 5px;
+    margin-right: 5px;
 }
 
 .edit-recipe {
-	padding-left: 5%;
-	padding-right: 5%;
+    margin-left: 5px;
+    margin-right: 5px;
 }
 
 .delete-recipe {
+    margin-left: 5px;
+    margin-right: 5px;
 }
 
 /*
