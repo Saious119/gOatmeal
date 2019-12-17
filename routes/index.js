@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var assert = require('assert');
 
-var url = 'mongodb://localhost:27017';
+var url = "mongodb+srv://mahonea:boneking@goatmeal-kl33q.mongodb.net/test?retryWrites=true&w=majority";
 
 const MongoClient = require('mongodb').MongoClient;
 var ObjectId = require('mongodb').ObjectId; 
