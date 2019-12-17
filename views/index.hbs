@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+    <head>
+	<link href="https://fonts.goggleapis.com/css#family=Roboto+Condensed#display=swap" rel="stylesheet">	
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link rel="stylesheet" href="public/stylesheets/gOatmealHome.css">
+        <div class="topnav">
+            <div class ="logo">
+              <a href = "http://fortrash.com/gOatmeal/"><img src ="img/gOatmealLogo.png"></a>
+            </div>
+	    <div class="cartlogo">
+              <a href = "shoppingcart"><img src ="img/shopping-cart.png"></a>
+	    </div>
+        </div>
+	<div class="subheader">
+        <div class="search">
+          <input type="text" size="40" placeholder="Search..">
+    	</div>
+	<a class = "add-button" href = "Add"><img src = "img/add.png"></a>
+	</div>
+    </head>
+	<body>
+        {{# each recipes}}
+            <div class="recipe">
+                <div class="recipe-left">
+                <div class="recipe-image">
+                    <img src="{{this.imgURL}}">
+                </div>
+                <div class="recipe-tags">
+                    <p>{{this.tags}}</p>
+                </div>
+                </div>
+                <div class="recipe-right">
+                <div class="recipe-name">
+                    <p>{{this.recipeName}}</p>
+                </div>
+                <div class="recipe-description">
+                    <p>{{this.description}}</p>
+                </div>
+                <div class="recipe-tools">
+                    <a class = "cook-recipe" href = "cook/{{this._id}}"><img src = "img/cook.png" width = 75px height = 75px></a>
+                    <a class = "edit-recipe" href = "cook"><img src = "img/edit.png" width = 75px height = 75px></a>
+                    <form action="/delete" method="post">
+                        <a class = "delete-recipe" href = "delete/{{this._id}}"><img src = "img/trash.png" width = 75px height = 75px></a>
+                    </form>
+                </div>
+                </div>
+            </div>
+        {{/each}}
+    </body>
+        <!--
+        <div class="recipe">
+            <header class="header">Name of recipe</header>
+            <div class="details">
+              <article class="main">
+                <p>Description</p>  
+              </article>
+              <aside class="aside aside-1">Photo</aside>
+              <aside class="aside aside-2">Cal Count and time</aside>
+            </div>
+            <div class="endPost">
+              <aside class="aside aside-3">tags</aside>
+              <aside class="aside aside-4">buttons here<button type="submit"><i class="fa fa-search"></i></button></aside>
+            </div>
+          </div>
+          //-->
+</html>

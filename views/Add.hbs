@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+    <head>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"> </script>
+        <link href="https://fonts.goggleapis.com/css#family=Roboto+Condensed#display=swap" rel="stylesheet">	
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+        
+        <script>
+            function addIngredientField(){
+                console.log("This shit runs");
+                var newField = "<div class='recipe-ing'>" + "<input type='text' size='35' placeholder='Ingredient' name = 'ingredientName'>" + "</input>" + "<input type='text' size='35' placeholder='Quantity' name = 'servingSize'>" + "</input>" + "</div>";
+                console.log(newField);
+                $(newField).appendTo('#ingredientBlock');
+            }
+            
+            function addStepField(){
+                console.log("This shit also runs");
+            	var newField = "<div class='recipe-steps'>" + "<input type='text' size='100' placeholder='Description' name = 'step'>" + "</input><input type='text' placeholder='Minutes' name = 'time'>" + "</input>" + "</div>";
+                console.log(newField);
+                $(newField).appendTo('#stepBlock');
+            }
+        </script>        
+
+    </head>
+	<body>
+        <form action="/insert" method="post">
+		<div class="edit">
+			<div class="edit-left">
+				<div class="recipe-top-pic">
+                    <h1>Picture URL</h1>
+					<div class="recipe-image-add">
+                        <textarea type="text" placeholder="Picture URL" name = 'picURL' style="width: 300px; height: 180px; resize: none;"></textarea>
+					</div>
+				</div>
+				<div class="recipe-divide">
+				</div>
+				<div class="recipe-center-descrip">
+				    <h1>Recipe Description</h1>
+					<div class="recipe-description">
+                        <textarea type="text" placeholder="Recipe Description" name = 'description' style="width: 300px; height: 180px; resize: none;"></textarea>
+					</div>
+				</div>
+				<div class="recipe-divide">
+				</div>
+				<div class="recipe-center-tags">
+					<div class="recipe-description-tags">
+						#tag (test)
+					</div>
+				</div>
+			</div>
+            <div class="edit-right">
+                <div class="recipe-tools">
+                    <a class = "cook-shop" title="shopping cart" href = "http://fortrash.com/gOatmeal/"><img src = "img/shopping-cart2.png" height= 75px width= 100px></a>
+                    <div class ="logo">
+                        <a href = "http://fortrash.com/gOatmeal/"><img src ="img/gOatmealLogo.png"></a>
+                    </div>
+                    <a class = "cook-recipe" title="cook" href = "http://fortrash.com/gOatmeal/"><img src = "img/cook.png" height=75px width= 100px ></a>
+                    <a class = "edit-recipe" title="edit" href = "http://fortrash.com/gOatmeal/"><img src = "img/edit.png" height=75px width= 100px ></a>
+                    <a class = "delete-recipe" title="delete" href = "http://fortrash.com/gOatmeal/"><img src = "img/trash.png" height=75px width= 100px ></a>
+                </div>
+                <div class="recipe-name">
+                    <div class = "recipe-title">
+                        Recipe Name
+                    </div>
+                    <input type="text" style = "height: 15px; width 300px;" placeholder="Recipe Name" name = 'recipeName'></input>
+                </div>
+                <div class="recipe-ing-list" id = "ingredientBlock">
+                    <div class="recipe-title">
+                        Ingredients
+                    </div>
+
+                    <div class="recipe-ing">
+                        <input type="text" size="35" placeholder="Ingredient" name = 'ingredientName'></input>
+                        <input type="text" size="35" placeholder="Quantity" name = 'servingSize'></input>
+                    </div>
+
+                </div>
+                    <div class="add-ing">
+                        <input type="button" style="background-color:green;color:black;" value="Add Ingredient" onclick = "addIngredientField();">
+                        </input>
+                    </div>
+                <div class="cook-step" id="stepBlock">
+                    <div class="recipe-title">
+                        Cooking Steps
+                    </div>
+                    <div class="recipe-steps">
+                        <input type="text" size="100" placeholder="Description" name = 'step'></input>
+                        <input type="text" placeholder="Minutes" name = 'time'></input>
+                    </div>
+                </div>
+                <div class="add-step">
+                    <input type="button" style="background-color:green;color:black;" value="Add New Step" onclick="addStepField();">
+                    </input>
+                </div>
+                <div class="add-Recipe">
+                    <button type = "Submit">Complete Recipe</button>
+                </div>
+            </div>
+        </form>
+	</div>
+    </body>
+      
+</html>
+
